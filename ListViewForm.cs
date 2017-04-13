@@ -23,7 +23,10 @@ namespace PAIN_Projekt
 
         public override void AddCar(Car car)
         {
-            throw new NotImplementedException();
+            ListViewItem item = new ListViewItem();
+            item.Tag = car;
+            UpdateItem(item);
+            carsListView.Items.Add(item);
         }
 
         public override void EditCar(Car car)
@@ -34,6 +37,17 @@ namespace PAIN_Projekt
         public override void DeleteCar(Car car)
         {
             throw new NotImplementedException();
+        }
+
+        public void UpdateItem(ListViewItem item)
+        {
+            Car car = (Car)item.Tag;
+            while (item.SubItems.Count < 4)
+                item.SubItems.Add(new ListViewItem.ListViewSubItem());
+            item.SubItems[0].Text = car.Brand;
+            item.SubItems[1].Text = car.MaxSpeed.ToString();
+            item.SubItems[2].Text = car.ProductionYear.ToString();
+            item.SubItems[3].Text = car.Type;
         }
     }
 }
