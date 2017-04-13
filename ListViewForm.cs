@@ -21,6 +21,18 @@ namespace PAIN_Projekt
             InitializeComponent();
         }
 
+        public override Car GetSelectedCar()
+        {
+            Car resultCar = null;
+
+            if (carsListView.SelectedItems.Count == 1)
+            {
+                resultCar = (Car)carsListView.SelectedItems[0].Tag;
+            }
+
+            return resultCar;
+        }
+
         public override void AddCar(Car car)
         {
             ListViewItem item = new ListViewItem();
@@ -29,14 +41,29 @@ namespace PAIN_Projekt
             carsListView.Items.Add(item);
         }
 
-        public override void EditCar(Car car)
+        public override void EditCar(Car car, Car oldCar)
         {
-            throw new NotImplementedException();
+            foreach (ListViewItem item in carsListView.Items)
+            {
+                if (oldCar == (Car)item.Tag)
+                {
+                    item.Tag = car;
+                    UpdateItem(item);
+                    break;
+                }
+            }
         }
 
         public override void DeleteCar(Car car)
         {
-            throw new NotImplementedException();
+            foreach (ListViewItem item in carsListView.Items)
+            {
+                if(car == (Car)item.Tag)
+                {
+                    carsListView.Items.Remove(item);
+                    break;
+                }
+            }
         }
 
         public void UpdateItem(ListViewItem item)

@@ -54,5 +54,28 @@ namespace PAIN_Projekt
             }
         }
 
+        public void EditCar(Car car, Car oldCar)
+        {
+            int index = cars.IndexOf(oldCar);
+            cars[index] = car;
+
+            foreach (ViewForm viewForm in MdiChildren)
+            {
+                viewForm.EditCar(car, oldCar);
+            }
+
+
+        }
+
+        public void DeleteCar(Car car)
+        {
+            cars.Remove(car);
+
+            foreach (ViewForm viewForm in MdiChildren)
+            {
+                viewForm.DeleteCar(car);
+            }
+        }
+
     }
 }

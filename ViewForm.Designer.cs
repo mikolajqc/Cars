@@ -67,6 +67,7 @@
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(23, 22);
             this.editButton.Text = "Edit";
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
             // deleteButton
             // 
@@ -76,6 +77,7 @@
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(23, 22);
             this.deleteButton.Text = "Delete";
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // ViewForm
             // 
