@@ -41,5 +41,15 @@ namespace PAIN_Projekt
             listViewForm.MdiParent = this;
             listViewForm.Show();
         }
+
+        public void AddCar(Car car)
+        {
+            cars.Add(car);
+            //calling virtual methods in ViewForm
+            foreach (ViewForm viewForm in MdiChildren)
+            {
+                viewForm.AddCar(car);
+            }
+        }
     }
 }

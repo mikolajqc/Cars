@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.brandTextBox = new System.Windows.Forms.TextBox();
             this.maxSpeedTextBox = new System.Windows.Forms.TextBox();
             this.productionYearTextBox = new System.Windows.Forms.TextBox();
@@ -38,6 +39,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // brandTextBox
@@ -46,6 +49,7 @@
             this.brandTextBox.Name = "brandTextBox";
             this.brandTextBox.Size = new System.Drawing.Size(203, 20);
             this.brandTextBox.TabIndex = 0;
+            this.brandTextBox.TextChanged += new System.EventHandler(this.brandTextBox_TextChanged);
             // 
             // maxSpeedTextBox
             // 
@@ -54,6 +58,8 @@
             this.maxSpeedTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.maxSpeedTextBox.Size = new System.Drawing.Size(203, 20);
             this.maxSpeedTextBox.TabIndex = 1;
+            this.maxSpeedTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.MaxSpeedTextBox_Validating);
+            this.maxSpeedTextBox.Validated += new System.EventHandler(this.MaxSpeedTextBox_Validated);
             // 
             // productionYearTextBox
             // 
@@ -61,6 +67,8 @@
             this.productionYearTextBox.Name = "productionYearTextBox";
             this.productionYearTextBox.Size = new System.Drawing.Size(203, 20);
             this.productionYearTextBox.TabIndex = 2;
+            this.productionYearTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.ProductionYearTextBox_Validating);
+            this.productionYearTextBox.Validated += new System.EventHandler(this.ProductionYearTextBox_Validated);
             // 
             // typeTextBox
             // 
@@ -87,6 +95,7 @@
             this.cancelButton.TabIndex = 5;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // label1
             // 
@@ -125,6 +134,10 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "Type:";
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // CarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -142,6 +155,8 @@
             this.Controls.Add(this.brandTextBox);
             this.Name = "CarForm";
             this.Text = "CarForm";
+            this.Load += new System.EventHandler(this.CarForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,5 +174,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

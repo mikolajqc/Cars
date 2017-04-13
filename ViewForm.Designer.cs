@@ -57,6 +57,7 @@
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(23, 22);
             this.addButton.Text = "Add";
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // editButton
             // 

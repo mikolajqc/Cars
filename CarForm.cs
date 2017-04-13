@@ -12,19 +12,99 @@ namespace PAIN_Projekt
 {
     public partial class CarForm : Form
     {
-        public CarForm()
+        private Car car;
+
+        public string CarBrand
+        {
+            get { return brandTextBox.Text; }
+        }
+
+        public long CarMaxSpeed
+        {
+            get { return long.Parse(maxSpeedTextBox.Text); }
+        }
+
+        public long CarProductionYear
+        {
+            get { return long.Parse(productionYearTextBox.Text); }
+        }
+
+        public string CarType
+        {
+            get { return typeTextBox.Text; }
+        }
+
+        public CarForm(Car car)
         {
             InitializeComponent();
+            this.car = car;
         }
 
         private void okButton_Click(object sender, EventArgs e)
         {
-
+            DialogResult = DialogResult.OK;
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+        }
+
+        private void CarForm_Load(object sender, EventArgs e)
+        {
+            if (car != null)
+            {
+                brandTextBox.Text = car.Brand;
+                maxSpeedTextBox.Text = car.MaxSpeed.ToString();
+                productionYearTextBox.Text = car.ProductionYear.ToString();
+                typeTextBox.Text = car.Type;
+            }
+        }
+
+        private void brandTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MaxSpeedTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            try
+            {
+                long maxSpeed = long.Parse(maxSpeedTextBox.Text);
+            }
+            catch (Exception exception)
+            {
+                e.Cancel = true;
+                errorProvider.SetError(maxSpeedTextBox, exception.Message);
+            }
+        }
+
+        private void MaxSpeedTextBox_Validated(object sender, EventArgs e)
+        {
+            errorProvider.SetError(maxSpeedTextBox, "");
+        }
+
+        private void ProductionYearTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            try
+            {
+                long productionYear = long.Parse(productionYearTextBox.Text);
+            }
+            catch (Exception exception)
+            {
+                e.Cancel = true;
+                errorProvider.SetError(productionYearTextBox, exception.Message);
+            }
+        }
+
+        private void ProductionYearTextBox_Validated(object sender, EventArgs e)
+        {
+            errorProvider.SetError(productionYearTextBox, "");
         }
     }
 }

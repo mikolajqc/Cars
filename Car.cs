@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PAIN_Projekt
 {
-    class Car
+    public class Car
     {
         public string Brand
         {
@@ -20,7 +20,7 @@ namespace PAIN_Projekt
             set;
         }
 
-        public DateTime ProductionYear
+        public long ProductionYear
         {
             get;
             set;
@@ -32,7 +32,7 @@ namespace PAIN_Projekt
             set;
         }
 
-        public Car(string brand, long maxSpeed, DateTime productionYear, string type)
+        public Car(string brand, long maxSpeed, long productionYear, string type)
         {
             Brand = brand;
             MaxSpeed = maxSpeed;
