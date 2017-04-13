@@ -40,8 +40,11 @@ namespace PAIN_Projekt
         private void MainForm_MdiChildActivate(object sender, EventArgs e)
         {
             ViewForm activeMdiChild = (ViewForm)this.ActiveMdiChild;
-            ToolStripManager.RevertMerge(this.toolStrip1);
-            ToolStripManager.Merge(activeMdiChild.toolStrip1, this.toolStrip1);
+            ToolStripManager.RevertMerge(toolStrip1);
+            ToolStripManager.Merge(activeMdiChild.toolStrip1, toolStrip1);
+            ToolStripManager.RevertMerge(statusStrip1);
+            ToolStripManager.Merge(activeMdiChild.statusStrip1, statusStrip1);
+
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -79,7 +82,11 @@ namespace PAIN_Projekt
             {
                 viewForm.DeleteCar(car);
             }
-        } 
+        }
 
+        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

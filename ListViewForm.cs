@@ -46,6 +46,7 @@ namespace PAIN_Projekt
                 UpdateItem(item);
                 carsListView.Items.Add(item);
             }
+            UpdateStatusNumberOfPosition();
         }
 
         public override void EditCar(Car car)
@@ -72,6 +73,7 @@ namespace PAIN_Projekt
             {
                 AddCar(car);
             }
+            UpdateStatusNumberOfPosition();
         }
 
         public override void DeleteCar(Car car)
@@ -84,6 +86,7 @@ namespace PAIN_Projekt
                     break;
                 }
             }
+            UpdateStatusNumberOfPosition();
         }
 
         public void UpdateItem(ListViewItem item)
@@ -107,6 +110,7 @@ namespace PAIN_Projekt
             {
                 if(FilterPosition(car))AddCar(car);
             }
+            UpdateStatusNumberOfPosition();
         }
 
         private void maxSpeed100ToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -154,6 +158,11 @@ namespace PAIN_Projekt
                     }
             }
             return result;
+        }
+
+        public override void UpdateStatusNumberOfPosition()
+        {
+            numberOfElementsLabel.Text = carsListView.Items.Count.ToString();
         }
     }
 }

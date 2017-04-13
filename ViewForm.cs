@@ -75,7 +75,13 @@ namespace PAIN_Projekt
         public abstract void AddCar(Car car);
         public abstract void EditCar(Car car);
         public abstract void DeleteCar(Car car);
-        public abstract void UpdateAll(/*List<Car> cars*/);
+        public abstract void UpdateAll();
+        public abstract void UpdateStatusNumberOfPosition();
+
+        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 #if DEBUG
@@ -101,7 +107,12 @@ namespace PAIN_Projekt
             throw new NotImplementedException();
         }
 
-        public override void UpdateAll(/*List<Car> cars*/)
+        public override void UpdateAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void UpdateStatusNumberOfPosition()
         {
             throw new NotImplementedException();
         }
