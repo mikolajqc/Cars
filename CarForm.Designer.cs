@@ -49,7 +49,6 @@
             this.brandTextBox.Name = "brandTextBox";
             this.brandTextBox.Size = new System.Drawing.Size(203, 20);
             this.brandTextBox.TabIndex = 0;
-            this.brandTextBox.TextChanged += new System.EventHandler(this.brandTextBox_TextChanged);
             // 
             // maxSpeedTextBox
             // 
@@ -105,7 +104,6 @@
             this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 6;
             this.label1.Text = "Brand:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 

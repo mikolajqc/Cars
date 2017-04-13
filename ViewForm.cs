@@ -76,7 +76,6 @@ namespace PAIN_Projekt
         public abstract void EditCar(Car car);
         public abstract void DeleteCar(Car car);
         public abstract void UpdateAll(List<Car> cars);
-
     }
 
 #if DEBUG

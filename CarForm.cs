@@ -45,11 +45,6 @@ namespace PAIN_Projekt
             DialogResult = DialogResult.OK;
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void cancelButton_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
@@ -64,11 +59,6 @@ namespace PAIN_Projekt
                 productionYearTextBox.Text = car.ProductionYear.ToString();
                 typeTextBox.Text = car.Type;
             }
-        }
-
-        private void brandTextBox_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void MaxSpeedTextBox_Validating(object sender, CancelEventArgs e)

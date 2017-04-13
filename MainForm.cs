@@ -47,7 +47,6 @@ namespace PAIN_Projekt
         public void AddCar(Car car)
         {
             cars.Add(car);
-            //calling virtual methods in ViewForm
             foreach (ViewForm viewForm in MdiChildren)
             {
                 viewForm.AddCar(car);
