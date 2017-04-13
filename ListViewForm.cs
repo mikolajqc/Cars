@@ -41,13 +41,12 @@ namespace PAIN_Projekt
             carsListView.Items.Add(item);
         }
 
-        public override void EditCar(Car car, Car oldCar)
+        public override void EditCar(Car car)
         {
             foreach (ListViewItem item in carsListView.Items)
             {
-                if (oldCar == (Car)item.Tag)
+                if (car == (Car)item.Tag)
                 {
-                    item.Tag = car;
                     UpdateItem(item);
                     break;
                 }
