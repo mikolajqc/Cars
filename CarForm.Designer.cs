@@ -41,6 +41,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.carTypeControl1 = new PAIN_Projekt.CarTypeControl();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,7 +80,7 @@
             // 
             // okButton
             // 
-            this.okButton.Location = new System.Drawing.Point(64, 187);
+            this.okButton.Location = new System.Drawing.Point(75, 213);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(113, 31);
             this.okButton.TabIndex = 4;
@@ -90,7 +91,7 @@
             // cancelButton
             // 
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelButton.Location = new System.Drawing.Point(253, 187);
+            this.cancelButton.Location = new System.Drawing.Point(228, 213);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(113, 31);
             this.cancelButton.TabIndex = 5;
@@ -138,6 +139,13 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
+            // carTypeControl1
+            // 
+            this.carTypeControl1.Location = new System.Drawing.Point(339, 136);
+            this.carTypeControl1.Name = "carTypeControl1";
+            this.carTypeControl1.Size = new System.Drawing.Size(64, 64);
+            this.carTypeControl1.TabIndex = 10;
+            // 
             // CarForm
             // 
             this.AcceptButton = this.okButton;
@@ -145,6 +153,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cancelButton;
             this.ClientSize = new System.Drawing.Size(444, 269);
+            this.Controls.Add(this.carTypeControl1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -178,5 +187,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        private CarTypeControl carTypeControl1;
     }
 }
