@@ -49,9 +49,10 @@
             this.maxSpeedColumn,
             this.productionYearColumn,
             this.typeColumn});
-            this.carsListView.Location = new System.Drawing.Point(0, 0);
+            this.carsListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.carsListView.Location = new System.Drawing.Point(0, 49);
             this.carsListView.Name = "carsListView";
-            this.carsListView.Size = new System.Drawing.Size(464, 262);
+            this.carsListView.Size = new System.Drawing.Size(464, 191);
             this.carsListView.TabIndex = 1;
             this.carsListView.UseCompatibleStateImageBehavior = false;
             this.carsListView.View = System.Windows.Forms.View.Details;
@@ -85,6 +86,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(464, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.Visible = false;
             // 
             // optionsToolStripMenuItem
             // 

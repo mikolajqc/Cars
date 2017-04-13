@@ -42,7 +42,10 @@ namespace PAIN_Projekt
 
         private void okButton_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.OK;
+            if (ValidateChildren())
+            {
+                DialogResult = DialogResult.OK;
+            }
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
