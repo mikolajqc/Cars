@@ -35,7 +35,6 @@ namespace PAIN_Projekt
                 CarForm carForm = new CarForm(car);
                 if (carForm.ShowDialog() == DialogResult.OK)
                 {
-                    //Car newCar = new Car(carForm.CarBrand, carForm.CarMaxSpeed, carForm.CarProductionYear, carForm.CarType);
                     car.Brand = carForm.CarBrand;
                     car.MaxSpeed = carForm.CarMaxSpeed;
                     car.ProductionYear = carForm.CarProductionYear;
@@ -54,12 +53,28 @@ namespace PAIN_Projekt
             }
         }
 
-        public abstract Car GetSelectedCar();
+        private void Form_Closing(object sender, FormClosingEventArgs e)
+        {
+            if (sender.GetType().IsSubclassOf(typeof(ViewForm)))
+            {
+                //check if is possible to close
+                if (((MdiParent as MainForm).MdiChildren.Length == 1) &&
+                    (e.CloseReason != CloseReason.MdiFormClosing))
+                {
+                    MessageBox.Show("You can't close last mdi window!");
+                    e.Cancel = true;
+                }
+                else
+                {
+                    e.Cancel = false;
+                }
+            }
+        }
 
+        public abstract Car GetSelectedCar();
         public abstract void AddCar(Car car);
         public abstract void EditCar(Car car);
         public abstract void DeleteCar(Car car);
-
         public abstract void UpdateAll(List<Car> cars);
 
     }

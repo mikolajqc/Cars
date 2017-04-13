@@ -85,6 +85,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
             this.Controls.Add(this.toolStrip1);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Closing);
             this.Name = "ViewForm";
             this.Text = "ViewForm";
             this.toolStrip1.ResumeLayout(false);
