@@ -25,6 +25,7 @@ namespace PAIN_Projekt
             ListViewForm listViewForm = new ListViewForm();
             listViewForm.MdiParent = this;
             listViewForm.Show();
+            listViewForm.UpdateAll(cars);
         }
 
         private void MainForm_MdiChildActivate(object sender, EventArgs e)
@@ -40,6 +41,7 @@ namespace PAIN_Projekt
             ListViewForm listViewForm = new ListViewForm();
             listViewForm.MdiParent = this;
             listViewForm.Show();
+            listViewForm.UpdateAll(cars);
         }
 
         public void AddCar(Car car)
@@ -51,5 +53,6 @@ namespace PAIN_Projekt
                 viewForm.AddCar(car);
             }
         }
+
     }
 }

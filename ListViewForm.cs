@@ -49,5 +49,14 @@ namespace PAIN_Projekt
             item.SubItems[2].Text = car.ProductionYear.ToString();
             item.SubItems[3].Text = car.Type;
         }
+
+        public override void UpdateAll(List<Car> cars)
+        {
+            //zrob cleaning
+            foreach (Car car in cars)
+            {
+                AddCar(car);
+            }
+        }
     }
 }

@@ -28,9 +28,12 @@ namespace PAIN_Projekt
             }
         }
 
+
         public abstract void AddCar(Car car);
         public abstract void EditCar(Car car);
         public abstract void DeleteCar(Car car);
+
+        public abstract void UpdateAll(List<Car> cars);
     }
 
 #if DEBUG
@@ -47,6 +50,11 @@ namespace PAIN_Projekt
         }
 
         public override void DeleteCar(Car car)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void UpdateAll(List<Car> cars)
         {
             throw new NotImplementedException();
         }
