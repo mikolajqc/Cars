@@ -68,13 +68,13 @@
             this.openToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.listViewFormToolStripMenuItem});
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.openToolStripMenuItem.Text = "Open";
             // 
             // listViewFormToolStripMenuItem
             // 
             this.listViewFormToolStripMenuItem.Name = "listViewFormToolStripMenuItem";
-            this.listViewFormToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.listViewFormToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.listViewFormToolStripMenuItem.Text = "ListViewForm";
             this.listViewFormToolStripMenuItem.Click += new System.EventHandler(this.listViewFormToolStripMenuItem_Click);
             // 
@@ -89,6 +89,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

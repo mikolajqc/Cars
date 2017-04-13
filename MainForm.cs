@@ -33,5 +33,13 @@ namespace PAIN_Projekt
             ToolStripManager.RevertMerge(this.toolStrip1);
             ToolStripManager.Merge(activeMdiChild.toolStrip1, this.toolStrip1);
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            //first Window
+            ListViewForm listViewForm = new ListViewForm();
+            listViewForm.MdiParent = this;
+            listViewForm.Show();
+        }
     }
 }
