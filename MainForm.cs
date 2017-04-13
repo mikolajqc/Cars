@@ -14,6 +14,15 @@ namespace PAIN_Projekt
     {
         List<Car> cars = new List<Car>();
 
+        public List<Car> Cars
+        {
+            get
+            {
+                return cars;
+            }
+        }
+
+
         public MainForm()
         {
             InitializeComponent();
@@ -25,7 +34,7 @@ namespace PAIN_Projekt
             ListViewForm listViewForm = new ListViewForm();
             listViewForm.MdiParent = this;
             listViewForm.Show();
-            listViewForm.UpdateAll(cars);
+            listViewForm.UpdateAll();
         }
 
         private void MainForm_MdiChildActivate(object sender, EventArgs e)
@@ -41,7 +50,7 @@ namespace PAIN_Projekt
             ListViewForm listViewForm = new ListViewForm();
             listViewForm.MdiParent = this;
             listViewForm.Show();
-            listViewForm.UpdateAll(cars);
+            listViewForm.UpdateAll();
         }
 
         public void AddCar(Car car)
@@ -70,7 +79,7 @@ namespace PAIN_Projekt
             {
                 viewForm.DeleteCar(car);
             }
-        }
+        } 
 
     }
 }

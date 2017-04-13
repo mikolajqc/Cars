@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CarForm));
             this.brandTextBox = new System.Windows.Forms.TextBox();
             this.maxSpeedTextBox = new System.Windows.Forms.TextBox();
             this.productionYearTextBox = new System.Windows.Forms.TextBox();
@@ -151,6 +152,7 @@
             this.Controls.Add(this.productionYearTextBox);
             this.Controls.Add(this.maxSpeedTextBox);
             this.Controls.Add(this.brandTextBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CarForm";
             this.Text = "CarForm";
             this.Load += new System.EventHandler(this.CarForm_Load);

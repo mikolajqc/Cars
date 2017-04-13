@@ -16,6 +16,10 @@ namespace PAIN_Projekt
     public partial class ListViewForm : ViewForm
 #endif
     {
+        //private bool filterIsOn = false;
+        //private bool filterMore = false;
+        private short filterConf = 0; // 0 all, 1 <=, 2 >
+
         public ListViewForm()
         {
             InitializeComponent();
@@ -35,10 +39,13 @@ namespace PAIN_Projekt
 
         public override void AddCar(Car car)
         {
-            ListViewItem item = new ListViewItem();
-            item.Tag = car;
-            UpdateItem(item);
-            carsListView.Items.Add(item);
+            if (FilterPosition(car))
+            {
+                ListViewItem item = new ListViewItem();
+                item.Tag = car;
+                UpdateItem(item);
+                carsListView.Items.Add(item);
+            }
         }
 
         public override void EditCar(Car car)
@@ -47,9 +54,23 @@ namespace PAIN_Projekt
             {
                 if (car == (Car)item.Tag)
                 {
-                    UpdateItem(item);
-                    break;
+                    if (FilterPosition(car))
+                    {//to nie dziala
+                        UpdateItem(item);
+                        return;
+                    }
+                    else
+                    { //to dziala
+                        carsListView.Items.Remove(item);
+                        return;
+                    }
                 }
+
+            }
+
+            if(FilterPosition(car))
+            {
+                AddCar(car);
             }
         }
 
@@ -76,13 +97,63 @@ namespace PAIN_Projekt
             item.SubItems[3].Text = car.Type;
         }
 
-        public override void UpdateAll(List<Car> cars)
+        public override void UpdateAll(/*List<Car> cars*/)
         {
             //zrob cleaning
+            carsListView.Items.Clear();
+            List<Car> cars = (MdiParent as MainForm).Cars;
+
             foreach (Car car in cars)
             {
-                AddCar(car);
+                if(FilterPosition(car))AddCar(car);
             }
+        }
+
+        private void maxSpeed100ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (filterConf != 1)
+            {
+                filterConf = 1;
+                UpdateAll();
+            }
+        }
+
+        private void allToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(filterConf != 0)
+            {
+                filterConf = 0;
+                UpdateAll();
+            }
+
+        }
+
+        private void maxSpeed100ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (filterConf != 2)
+            {
+                filterConf = 2;
+                UpdateAll();
+            }
+        }
+
+        private bool FilterPosition(Car car)
+        {
+            bool result = true;
+            switch (filterConf)
+            {
+                case 1:
+                    {
+                        if (car.MaxSpeed < 100) result = false;
+                        break;
+                    }
+                case 2:
+                    {
+                        if (car.MaxSpeed >= 100) result = false;
+                        break;
+                    }
+            }
+            return result;
         }
     }
 }
