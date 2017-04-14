@@ -68,7 +68,9 @@ namespace PAIN_Projekt
                 maxSpeedTextBox.Text = car.MaxSpeed.ToString();
                 productionYearTextBox.Text = car.ProductionYear.ToString();
                 carTypeControl1.Type = car.Type;
+                
             }
+            carTypeTextBox.Text = carTypeControl1.Type.ToString();
         }
 
         private void MaxSpeedTextBox_Validating(object sender, CancelEventArgs e)
@@ -105,6 +107,16 @@ namespace PAIN_Projekt
         private void ProductionYearTextBox_Validated(object sender, EventArgs e)
         {
             errorProvider.SetError(productionYearTextBox, "");
+        }
+
+        private void CarTypeControl_Changed(object sender, EventArgs e)
+        {
+            carTypeTextBox.Text = carTypeControl1.Type.ToString();
+        }
+
+        private void carTypeControl1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

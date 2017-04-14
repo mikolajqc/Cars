@@ -41,6 +41,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.carTypeControl1 = new PAIN_Projekt.CarTypeControl();
+            this.carTypeTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
@@ -135,11 +136,19 @@
             // 
             this.carTypeControl1.BackColor = System.Drawing.SystemColors.Control;
             this.carTypeControl1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("carTypeControl1.BackgroundImage")));
-            this.carTypeControl1.Location = new System.Drawing.Point(339, 110);
+            this.carTypeControl1.Location = new System.Drawing.Point(339, 113);
             this.carTypeControl1.Name = "carTypeControl1";
             this.carTypeControl1.Size = new System.Drawing.Size(64, 64);
             this.carTypeControl1.TabIndex = 10;
             this.carTypeControl1.Type = PAIN_Projekt.CarType.TRUCK;
+            this.carTypeControl1.carTypeChanged += new System.EventHandler(this.CarTypeControl_Changed);
+            // 
+            // carTypeTextBox
+            // 
+            this.carTypeTextBox.Location = new System.Drawing.Point(200, 110);
+            this.carTypeTextBox.Name = "carTypeTextBox";
+            this.carTypeTextBox.Size = new System.Drawing.Size(133, 20);
+            this.carTypeTextBox.TabIndex = 11;
             // 
             // CarForm
             // 
@@ -148,6 +157,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cancelButton;
             this.ClientSize = new System.Drawing.Size(444, 269);
+            this.Controls.Add(this.carTypeTextBox);
             this.Controls.Add(this.carTypeControl1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -181,5 +191,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ErrorProvider errorProvider;
         private CarTypeControl carTypeControl1;
+        private System.Windows.Forms.TextBox carTypeTextBox;
     }
 }

@@ -14,6 +14,7 @@ namespace PAIN_Projekt
     {
         List<Bitmap> vehicleImages = new List<Bitmap>();
         private CarType carType;
+        public event EventHandler carTypeChanged;
 
         [Category("Data")]
         [Browsable(true), EditorBrowsable(EditorBrowsableState.Always)]
@@ -42,6 +43,8 @@ namespace PAIN_Projekt
         {
             carType = (CarType)((int)(carType + 1) % 3);
             BackgroundImage = vehicleImages[(int)carType];
+
+            carTypeChanged(this, e);
         }
     }
 }
