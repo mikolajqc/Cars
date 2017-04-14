@@ -5,14 +5,16 @@ using System.Drawing.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Windows.Forms.Design;
 
 namespace PAIN_Projekt
 {
     class CarTypeControlEditor : UITypeEditor
     {
-        // System.Drawing.Image truckImage = 
-        CarType currentCarType = CarType.MOTOR;
+        CarType currentCarType; //= CarType.TRUCK;
+       
+
         public override void PaintValue(PaintValueEventArgs e)
         {
             //base.PaintValue(e);
@@ -31,6 +33,8 @@ namespace PAIN_Projekt
         public override bool GetPaintValueSupported(ITypeDescriptorContext context)
         {
             //return base.GetPaintValueSupported(context);
+            CarTypeControl owner = context.Instance as CarTypeControl;
+            currentCarType = owner.Type;
             return true;
         }
 
@@ -50,10 +54,14 @@ namespace PAIN_Projekt
             {
                 CarTypeControl carTypeControl = new CarTypeControl();
                 carTypeControl.Type = currentCarType;
+
+
                 edSvc.DropDownControl(carTypeControl);
                 currentCarType = carTypeControl.Type;
+
                 return carTypeControl.Type;
             }
+
             return value;
         }
     }

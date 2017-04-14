@@ -148,7 +148,7 @@
             this.carTypeControl1.Name = "carTypeControl1";
             this.carTypeControl1.Size = new System.Drawing.Size(64, 64);
             this.carTypeControl1.TabIndex = 10;
-            this.carTypeControl1.Type = PAIN_Projekt.CarType.TRUCK;
+            this.carTypeControl1.Type = PAIN_Projekt.CarType.CAR;
             this.carTypeControl1.carTypeChanged += new System.EventHandler(this.CarTypeControl_Changed);
             // 
             // CarForm
