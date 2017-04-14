@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PAIN_Projekt
 {
-    enum CarType
+    public enum CarType
     {
         MOTOR,
         CAR,

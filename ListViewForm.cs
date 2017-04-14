@@ -97,7 +97,7 @@ namespace PAIN_Projekt
             item.SubItems[0].Text = car.Brand;
             item.SubItems[1].Text = car.MaxSpeed.ToString();
             item.SubItems[2].Text = car.ProductionYear.ToString();
-            item.SubItems[3].Text = car.Type;
+            item.SubItems[3].Text = car.Type.ToString();
         }
 
         public override void UpdateAll(/*List<Car> cars*/)

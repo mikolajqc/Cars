@@ -29,9 +29,16 @@ namespace PAIN_Projekt
             get { return long.Parse(productionYearTextBox.Text); }
         }
 
+        /*
         public string CarType
         {
             get { return typeTextBox.Text; }
+        }
+        */
+
+        public CarType CarType
+        {
+            get { return carTypeControl1.Type; }
         }
 
         public CarForm(Car car)
@@ -60,7 +67,7 @@ namespace PAIN_Projekt
                 brandTextBox.Text = car.Brand;
                 maxSpeedTextBox.Text = car.MaxSpeed.ToString();
                 productionYearTextBox.Text = car.ProductionYear.ToString();
-                typeTextBox.Text = car.Type;
+                carTypeControl1.Type = car.Type;
             }
         }
 

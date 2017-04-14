@@ -13,6 +13,22 @@ namespace PAIN_Projekt
     public partial class CarTypeControl : UserControl
     {
         List<Bitmap> vehicleImages = new List<Bitmap>();
+        private CarType carType;
+
+        [Category("Data")]
+        [Browsable(true), EditorBrowsable(EditorBrowsableState.Always)]
+        public CarType Type
+        {
+            get
+            {
+                return carType;
+            }
+            set
+            {
+                carType = value;
+                BackgroundImage = vehicleImages[(int)carType];
+            }
+        }
 
         public CarTypeControl()
         {
@@ -24,12 +40,8 @@ namespace PAIN_Projekt
 
         private void CarTypeControl_Click(object sender, EventArgs e)
         {
-            BackgroundImage = vehicleImages[(vehicleImages.IndexOf((Bitmap)BackgroundImage) + 1)%3];
-        }
-
-        private void CarTypeControl_Load(object sender, EventArgs e)
-        {
-
+            carType = (CarType)((int)(carType + 1) % 3);
+            BackgroundImage = vehicleImages[(int)carType];
         }
     }
 }

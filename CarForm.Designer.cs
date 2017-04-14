@@ -33,7 +33,6 @@
             this.brandTextBox = new System.Windows.Forms.TextBox();
             this.maxSpeedTextBox = new System.Windows.Forms.TextBox();
             this.productionYearTextBox = new System.Windows.Forms.TextBox();
-            this.typeTextBox = new System.Windows.Forms.TextBox();
             this.okButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -70,13 +69,6 @@
             this.productionYearTextBox.TabIndex = 2;
             this.productionYearTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.ProductionYearTextBox_Validating);
             this.productionYearTextBox.Validated += new System.EventHandler(this.ProductionYearTextBox_Validated);
-            // 
-            // typeTextBox
-            // 
-            this.typeTextBox.Location = new System.Drawing.Point(200, 110);
-            this.typeTextBox.Name = "typeTextBox";
-            this.typeTextBox.Size = new System.Drawing.Size(203, 20);
-            this.typeTextBox.TabIndex = 3;
             // 
             // okButton
             // 
@@ -141,10 +133,13 @@
             // 
             // carTypeControl1
             // 
-            this.carTypeControl1.Location = new System.Drawing.Point(339, 136);
+            this.carTypeControl1.BackColor = System.Drawing.SystemColors.Control;
+            this.carTypeControl1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("carTypeControl1.BackgroundImage")));
+            this.carTypeControl1.Location = new System.Drawing.Point(339, 110);
             this.carTypeControl1.Name = "carTypeControl1";
             this.carTypeControl1.Size = new System.Drawing.Size(64, 64);
             this.carTypeControl1.TabIndex = 10;
+            this.carTypeControl1.Type = PAIN_Projekt.CarType.TRUCK;
             // 
             // CarForm
             // 
@@ -160,7 +155,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.okButton);
-            this.Controls.Add(this.typeTextBox);
             this.Controls.Add(this.productionYearTextBox);
             this.Controls.Add(this.maxSpeedTextBox);
             this.Controls.Add(this.brandTextBox);
@@ -179,7 +173,6 @@
         private System.Windows.Forms.TextBox brandTextBox;
         private System.Windows.Forms.TextBox maxSpeedTextBox;
         private System.Windows.Forms.TextBox productionYearTextBox;
-        private System.Windows.Forms.TextBox typeTextBox;
         private System.Windows.Forms.Button okButton;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Label label1;

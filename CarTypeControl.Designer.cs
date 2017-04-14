@@ -35,10 +35,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.BackgroundImage = global::PAIN_Projekt.Properties.Resources.car;
+            this.BackgroundImage = global::PAIN_Projekt.Properties.Resources.motor;
             this.Name = "CarTypeControl";
             this.Size = new System.Drawing.Size(64, 64);
-            this.Load += new System.EventHandler(this.CarTypeControl_Load);
             this.Click += new System.EventHandler(this.CarTypeControl_Click);
             this.ResumeLayout(false);
 

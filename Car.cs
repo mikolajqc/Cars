@@ -26,13 +26,13 @@ namespace PAIN_Projekt
             set;
         }
 
-        public string Type
+        public CarType Type
         {
             get;
             set;
         }
 
-        public Car(string brand, long maxSpeed, long productionYear, string type)
+        public Car(string brand, long maxSpeed, long productionYear, CarType type)
         {
             Brand = brand;
             MaxSpeed = maxSpeed;
