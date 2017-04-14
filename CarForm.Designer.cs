@@ -40,8 +40,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.carTypeControl1 = new PAIN_Projekt.CarTypeControl();
             this.carTypeTextBox = new System.Windows.Forms.TextBox();
+            this.carTypeControl1 = new PAIN_Projekt.CarTypeControl();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
@@ -132,6 +132,14 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
+            // carTypeTextBox
+            // 
+            this.carTypeTextBox.Location = new System.Drawing.Point(200, 110);
+            this.carTypeTextBox.Name = "carTypeTextBox";
+            this.carTypeTextBox.ReadOnly = true;
+            this.carTypeTextBox.Size = new System.Drawing.Size(133, 20);
+            this.carTypeTextBox.TabIndex = 11;
+            // 
             // carTypeControl1
             // 
             this.carTypeControl1.BackColor = System.Drawing.SystemColors.Control;
@@ -142,13 +150,6 @@
             this.carTypeControl1.TabIndex = 10;
             this.carTypeControl1.Type = PAIN_Projekt.CarType.TRUCK;
             this.carTypeControl1.carTypeChanged += new System.EventHandler(this.CarTypeControl_Changed);
-            // 
-            // carTypeTextBox
-            // 
-            this.carTypeTextBox.Location = new System.Drawing.Point(200, 110);
-            this.carTypeTextBox.Name = "carTypeTextBox";
-            this.carTypeTextBox.Size = new System.Drawing.Size(133, 20);
-            this.carTypeTextBox.TabIndex = 11;
             // 
             // CarForm
             // 

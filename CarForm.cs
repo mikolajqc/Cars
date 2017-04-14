@@ -29,13 +29,6 @@ namespace PAIN_Projekt
             get { return long.Parse(productionYearTextBox.Text); }
         }
 
-        /*
-        public string CarType
-        {
-            get { return typeTextBox.Text; }
-        }
-        */
-
         public CarType CarType
         {
             get { return carTypeControl1.Type; }

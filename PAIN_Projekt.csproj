@@ -60,6 +60,7 @@
     <Compile Include="CarTypeControl.Designer.cs">
       <DependentUpon>CarTypeControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="CarTypeControlEditor.cs" />
     <Compile Include="ListViewForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace PAIN_Projekt
 {
+    //[Designer(typeof(MyDesigner))]
     public partial class CarTypeControl : UserControl
     {
         List<Bitmap> vehicleImages = new List<Bitmap>();
@@ -18,6 +19,7 @@ namespace PAIN_Projekt
 
         [Category("Data")]
         [Browsable(true), EditorBrowsable(EditorBrowsableState.Always)]
+        [Editor(typeof(CarTypeControlEditor), typeof(System.Drawing.Design.UITypeEditor))]
         public CarType Type
         {
             get
