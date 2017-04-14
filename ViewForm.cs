@@ -57,7 +57,7 @@ namespace PAIN_Projekt
         {
             if (sender.GetType().IsSubclassOf(typeof(ViewForm)))
             {
-                //check if is possible to close
+                //possible to close?
                 if (((MdiParent as MainForm).MdiChildren.Length == 1) &&
                     (e.CloseReason != CloseReason.MdiFormClosing))
                 {

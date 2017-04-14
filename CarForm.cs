@@ -106,10 +106,5 @@ namespace PAIN_Projekt
         {
             carTypeTextBox.Text = carTypeControl1.Type.ToString();
         }
-
-        private void carTypeControl1_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -16,9 +16,7 @@ namespace PAIN_Projekt
     public partial class ListViewForm : ViewForm
 #endif
     {
-        //private bool filterIsOn = false;
-        //private bool filterMore = false;
-        private short filterConf = 0; // 0 all, 1 <=, 2 >
+        private short filterConf = 0;
 
         public ListViewForm()
         {
@@ -56,12 +54,12 @@ namespace PAIN_Projekt
                 if (car == (Car)item.Tag)
                 {
                     if (FilterPosition(car))
-                    {//to nie dziala
+                    {
                         UpdateItem(item);
                         return;
                     }
                     else
-                    { //to dziala
+                    {
                         carsListView.Items.Remove(item);
                         return;
                     }
@@ -100,9 +98,8 @@ namespace PAIN_Projekt
             item.SubItems[3].Text = car.Type.ToString();
         }
 
-        public override void UpdateAll(/*List<Car> cars*/)
+        public override void UpdateAll()
         {
-            //zrob cleaning
             carsListView.Items.Clear();
             List<Car> cars = (MdiParent as MainForm).Cars;
 

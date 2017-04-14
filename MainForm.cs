@@ -49,7 +49,6 @@ namespace PAIN_Projekt
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            //first Window
             ListViewForm listViewForm = new ListViewForm();
             listViewForm.MdiParent = this;
             listViewForm.Show();
@@ -84,9 +83,5 @@ namespace PAIN_Projekt
             }
         }
 
-        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

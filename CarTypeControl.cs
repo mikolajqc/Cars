@@ -10,7 +10,6 @@ using System.Windows.Forms;
 
 namespace PAIN_Projekt
 {
-    //[Designer(typeof(MyDesigner))]
     public partial class CarTypeControl : UserControl
     {
         List<Bitmap> vehicleImages = new List<Bitmap>();

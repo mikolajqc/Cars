@@ -12,12 +12,11 @@ namespace PAIN_Projekt
 {
     class CarTypeControlEditor : UITypeEditor
     {
-        CarType currentCarType; //= CarType.TRUCK;
+        CarType currentCarType;
        
 
         public override void PaintValue(PaintValueEventArgs e)
         {
-            //base.PaintValue(e);
             System.Drawing.Rectangle rect = new System.Drawing.Rectangle(e.Bounds.X, e.Bounds.Y, e.Bounds.Width, e.Bounds.Height);
 
             System.Drawing.Image image = null;
@@ -27,12 +26,10 @@ namespace PAIN_Projekt
 
             e.Graphics.DrawImage(image, rect);
 
-
         }
 
         public override bool GetPaintValueSupported(ITypeDescriptorContext context)
         {
-            //return base.GetPaintValueSupported(context);
             CarTypeControl owner = context.Instance as CarTypeControl;
             currentCarType = owner.Type;
             return true;
@@ -40,13 +37,11 @@ namespace PAIN_Projekt
 
         public override UITypeEditorEditStyle GetEditStyle(ITypeDescriptorContext context)
         {
-            //return base.GetEditStyle(context);
             return UITypeEditorEditStyle.DropDown;
         }
 
         public override object EditValue(ITypeDescriptorContext context, IServiceProvider provider, object value)
         {
-            //return base.EditValue(context, provider, value);
             IWindowsFormsEditorService edSvc =
                 (IWindowsFormsEditorService)provider.GetService(typeof(IWindowsFormsEditorService));
 
